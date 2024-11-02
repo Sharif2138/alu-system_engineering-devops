@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#This script has an SSH client configuration which allows us connect a server without typing a password
+Host my server
+    HostName 52.91.217.20
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
