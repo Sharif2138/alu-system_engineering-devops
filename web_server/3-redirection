@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
-#This script configures a new ubuntu machine to do a parmanent redirect to a specified url
+# Configuring Nginx server so that /redirect_me is redirecting to another page.
 
-sudo apt-get update
-sudo apt-get install -y nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 
-echo "server {
-    listen 80;
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+echo "Holberton School" | sudo tee /var/www/html/index.html
 
+# Redirection configuration
+replacement="server_name _;\\
+    location /redirect_me {\\
+        return 301 https://github.com/Maaxboon/;\\
+    }"
+sudo sed -i "s|server_name _;|$replacement|" /etc/nginx/sites-available/default
+
+sudo nginx -t
 sudo service nginx restart
 
