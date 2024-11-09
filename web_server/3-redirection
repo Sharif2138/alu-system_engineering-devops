@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#This script configures a new ubuntu machine to do a parmanent redirect to a specified url
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "server {
+    listen 80;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+
+sudo service nginx restart
+
