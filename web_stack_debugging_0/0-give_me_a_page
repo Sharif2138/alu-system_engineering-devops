@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+docker exec -it 61d7327b9769 /bin/bash
 service apache2 start
 echo "Hello Holberton" > /var/www/html/index.html
