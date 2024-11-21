@@ -3,41 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>404 - Page Not Found</title>
     <style>
         body {
-            background-color: #f7f7f7;
-            color: #333;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: #fff;
             text-align: center;
-            padding-top: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         h1 {
-            font-size: 50px;
-            color: #ff6b6b;
+            font-size: 4rem;
+            margin: 0;
         }
         p {
-            font-size: 18px;
-            margin: 20px;
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
         }
-        .back-button {
+        .container {
+            max-width: 600px;
+        }
+        a {
+            text-decoration: none;
             padding: 10px 20px;
-            background-color: #ff6b6b;
+            background-color: #00cec9;
             color: #fff;
-            border: none;
+            font-size: 1.2rem;
             border-radius: 5px;
-            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .back-button:hover {
-            background-color: #ff4949;
+        a:hover {
+            background-color: #00b894;
+        }
+        img {
+            width: 150px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Oops! Page Not Found</h1>
-    <p>Ceci n'est pas une page</p>
-    <p>The page you're looking for doesn't exist or may have been moved.</p>
-    <button class="back-button" onclick="history.back()">Go Back</button>
+    <div class="container">
+        <h1>404 - Not Found</h1>
+        <p>Ceci n'est pas une page.</p>
+        <p>We can't seem to find the page you're looking for.</p>
+        <a href="/">Return to Homepage</a>
+        <img src="https://via.placeholder.com/150" alt="Funny 404 image">
+    </div>
 </body>
 </html>
-
