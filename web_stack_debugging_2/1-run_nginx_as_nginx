@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#This script enables the gninx webserver to use nginx user as the default user and also litsen on port 8080
+
+if ! id nginx &>/dev/null; then
+    echo "Creating nginx user...."
+    useradd -r nginx
+fi
+
+
+echo "configuring Nginx..."
+sed -i 's/^user .*/user nginx;/g' /etc/nginx/nginx.conf
+sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/sites-enabled/default
+
+echo "restarting Nginx..."
+service nginx restart
